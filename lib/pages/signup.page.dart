@@ -4,19 +4,35 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black38,
+          onPressed: () => Navigator.pop(context, false),
+        ),
+      ),
       body: Container(
-        padding: EdgeInsets.only(top: 10, left: 40, right: 40),
+        padding: EdgeInsets.only(
+          top: 10,
+          left: 40,
+          right: 40,
+        ),
         color: Colors.white,
         child: ListView(
           children: <Widget>[
             Container(
               width: 200,
               height: 200,
-              alignment: Alignment(0.0, 1.15),
+              alignment: Alignment(
+                0.0,
+                1.15,
+              ), //para colocar o botão em baixo do container
               decoration: new BoxDecoration(
+                //decoration dentro do container para deixar a imagem como fundo e poder colocar o botão por cima
                 image: new DecorationImage(
                   image: AssetImage("assets/profile-picture.png"),
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.fitHeight, //como a imagem se comporta no fundo
                 ),
               ),
               child: Container(
@@ -30,7 +46,7 @@ class SignupPage extends StatelessWidget {
                     stops: [0.3, 1.0],
                     colors: [
                       Color(0xFFF58524),
-                      Color(0XFFF92B7F),
+                      Color(0xFFF92B7F),
                     ],
                   ),
                   border: Border.all(
@@ -38,7 +54,9 @@ class SignupPage extends StatelessWidget {
                     color: const Color(0xFFFFFFFF),
                   ),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(56),
+                    Radius.circular(
+                      56,
+                    ),
                   ),
                 ),
                 child: SizedBox.expand(
@@ -56,8 +74,7 @@ class SignupPage extends StatelessWidget {
               height: 20,
             ),
             TextFormField(
-              // autofocus: true,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "Nome",
                 labelStyle: TextStyle(
@@ -70,11 +87,7 @@ class SignupPage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             TextFormField(
-              // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "E-mail",
@@ -88,13 +101,8 @@ class SignupPage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             TextFormField(
-              // autofocus: true,
-              keyboardType: TextInputType.text,
-              obscureText: true,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
@@ -103,10 +111,12 @@ class SignupPage extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(
+                fontSize: 20,
+              ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Container(
               height: 60,
@@ -118,7 +128,7 @@ class SignupPage extends StatelessWidget {
                   stops: [0.3, 1],
                   colors: [
                     Color(0xFFF58524),
-                    Color(0XFFF92B7F),
+                    Color(0xFFF92B7F),
                   ],
                 ),
                 borderRadius: BorderRadius.all(
@@ -140,12 +150,8 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             Container(
               height: 40,
-              alignment: Alignment.center,
               child: FlatButton(
                 child: Text(
                   "Cancelar",

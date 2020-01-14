@@ -1,4 +1,5 @@
 import 'package:doglife/pages/reset-password.page.dart';
+import 'package:doglife/pages/signup.page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -167,7 +168,14 @@ class LoginPage extends StatelessWidget {
                   "Cadastre-se",
                   textAlign: TextAlign.center,
                 ),
-                onPressed: () => {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignupPage(),
+                    ),
+                  );
+                },
               ),
             ),
           ],
